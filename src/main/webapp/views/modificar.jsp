@@ -17,39 +17,53 @@
   <div class="text-center d-flex justify-content-center flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
     <h2 class="text-black-50">Modificar película</h2>
   </div>
-  <form method="post" action="${pageContext.request.contextPath}/modificar">
-    <div class="form-row">
-      <div class="form-group col-md-4">
-        <label for="titulo" autofocus>Titulo</label>
+  <form method="post" action="${pageContext.request.contextPath}/modificar" style="margin-top: 30px;margin-left: 240px">
+
+      <div class="form-group row">
+        <label for="titulo" class="col-sm-2 col-form-label" autofocus>Titulo</label>
+        <div class="col-sm-6">
         <input type="text"  name="titulo" id="titulo" class="form-control" value="${pelicula.titulo}">
+        </div>
       </div>
-      <div class="form-group col-md-4">
-        <label for="categoria" autofocus>Categoria</label>
+      <div class="form-group row mt-2">
+        <label for="categoria" class="col-sm-2 col-form-label" autofocus>Categoria</label>
+        <div class="col-sm-6">
         <input type="text"  name="categoria" id="categoria" class="form-control" value="${pelicula.categoria}">
+        </div>
       </div>
-      <div class="form-group text-center col-md-6">
-        <label for="descripcion" autofocus>Descripción</label>
-        <input type="text" name="descripcion" id="descripcion" class="form-control" value="${pelicula.descripcion}">
+      <div class="form-group row mt-2">
+        <label for="descripcion" class="col-sm-2 col-form-label" autofocus>Descripción</label>
+        <div class="col-sm-6">
+        <textarea name="descripcion" id="descripcion" class="form-control" rows="2">${pelicula.descripcion}</textarea>
+        </div>
       </div>
-    </div>
-    <div class="form-row">
-      <div class="form-group col-md-4">
-        <label for="fecha" autofocus>Fecha de estreno</label>
+      <div class="form-group row mt-2">
+        <label for="fecha" class="col-sm-2 col-form-label" autofocus>Fecha de estreno</label>
+        <div class="col-sm-6">
         <input type="date" name="fecha" id="fecha" class="form-control" value="${pelicula.fechaEstreno}">
+        </div>
       </div>
-      <div class="form-group col-md-4">
-        <label for="duracion" autofocus>Duración</label>
+      <div class="form-group row mt-2">
+        <label for="duracion" class="col-sm-2 col-form-label" autofocus>Duración</label>
+        <div class="col-sm-6">
         <input type="time" name="duracion" id="duracion" max="08:00:00" min="00:00:00" class="form-control without_ampm"
                value="${pelicula.duracion}">
+        </div>
       </div>
-      <div class="form-group col-md-4">
-        <label for="autor" autofocus>Autor</label>
+      <div class="form-group row mt-2">
+        <label for="autor" class="col-sm-2 col-form-label" autofocus>Autor</label>
+        <div class="col-sm-6">
         <input type="text" name="autor" id="autor" class="form-control" value="${pelicula.autor}">
+        </div>
       </div>
-    </div>
+
     <input type="hidden" value="${pelicula.id}" name="id">
     <input type="hidden" name="accion" value="modificar">
+    <div class="form-group row" style="margin-left: 165px">
+      <div class="col-sm-7 row">
     <button type="submit" class="btn btn-primary">Modificar</button>
+      </div>
+    </div>
   </form>
 </div>
 </body>
